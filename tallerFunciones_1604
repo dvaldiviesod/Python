@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+#Ejercicio 1
+def validar(email):
+    caracterBuscado="@"
+    emailValido=True
+    for c in email:
+        if c==caracterBuscado:
+            return emailValido
+direccion=input("Ingrese su dirección email: ")
+if validar(direccion):
+    print("La dirección es válida")
+else:
+    print("La dirección es inválida")
+#Ejercicio 2
+def sumaDigitos(numero):
+    suma=0
+    while numero!=0:
+        digito=numero%10
+        suma=suma+digito
+        numero=numero//10
+    return suma
+num=int(input("Ingrese un número entero a procesar (0 para salir): "))
+while num!=0:
+    print("La suma de los digitos del número es:", sumaDigitos(num))
+    num=int(input("Ingrese un número entero a procesar (0 para salir): "))
+print("Salió del programa")
+#Ejercicio 3
+sumatoria=0
+num=int(input("Ingrese un número entero a procesar (0 para salir): "))
+while num!=0:
+    print("La suma de sus digitos es:",sumaDigitos(num))
+    sumatoria=sumatoria+num
+    num=int(input("Ingrese un número entero a procesar (0 para salir): "))
+print("La suma de todos los números ingresados es:", sumatoria)
+print("La suma de todos los dígitos ingresados es:", sumaDigitos(sumatoria))
+#Ejercicio 9
+def cedula(num):
+    if len(str(num)) < 10:
+        return True
+    else:
+        return False
+numeroCedula = int(input("Ingrese su número de cédula (10 dígitos): "))
+if cedula(numeroCedula):
+    print("Su número de cédula es válido.")
+else:
+    print("Su número de cédula es inválido.")
